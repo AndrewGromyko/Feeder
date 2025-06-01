@@ -22,7 +22,7 @@ val commitCount by project.extra {
 val latestTag by project.extra {
     providers
         .exec {
-            commandLine("cmd", git", "describe")
+            commandLine("cmd", "git", "describe")
         }.standardOutput.asText
         .get()
         .trim()
