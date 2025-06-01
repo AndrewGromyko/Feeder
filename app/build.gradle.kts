@@ -9,19 +9,20 @@ plugins {
 }
 
 val commitCount by project.extra {
-    providers
+    /*providers
         .exec {
             commandLine("git", "rev-list", "--count", "HEAD")
         }.standardOutput.asText
         .get()
         .trim()
-        .toInt()
+        .toInt()*/
+    1
 }
 
 val latestTag by project.extra {
     providers
         .exec {
-            commandLine("git", "describe")
+            commandLine("cmd", git", "describe")
         }.standardOutput.asText
         .get()
         .trim()
